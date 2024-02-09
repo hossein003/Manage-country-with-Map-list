@@ -10,15 +10,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Add Country</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
 <div class="form-container">
-    <form>
+    <form action="/country?action=insert" method="post">
         <div class="form-group">
             <label for="country-name">Country Name:</label>
-            <input type="text" id="country-name" name="country-name" required>
+            <input type="text" id="country-name" name="name" required>
         </div>
         <div class="form-group">
             <label for="capital">Capital:</label>
@@ -40,7 +40,8 @@
                 <option value="Antarctica">Antarctica</option>
             </select>
         </div>
-        <button type="submit" class="btn-submit">Add</button>
+        <button type="submit" name="submit" class="btn-submit">Add</button>
+        <button type="submit" name="cancel" class="btn-submit">cancel</button>
     </form>
 </div>
 </body>

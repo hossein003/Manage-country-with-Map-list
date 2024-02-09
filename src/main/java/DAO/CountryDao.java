@@ -31,15 +31,12 @@ public class CountryDao {
 
     public List<Country> query(Country country){
         List<Country> result = new ArrayList<>();
-        for (Country entity:
-                findAll()) {
-            if (entity.getName() != null && !entity.getName().isEmpty() && entity.getName().contains(country.getName())){
+        for(Country entity:findAll()){
+            if(country.getName()!=null && !country.getName().isEmpty() && entity.getName().contains(country.getName())){
                 result.add(entity);
-            }
-            if (entity.getCapital() != null && !entity.getCapital().isEmpty() && entity.getCapital().contains(country.getCapital())){
+            }else if(country.getCapital()!=null &&  !country.getCapital().isEmpty() && entity.getCapital().contains(country.getCapital())){
                 result.add(entity);
-            }
-            if (entity.getContinent() != null && !entity.getContinent().isEmpty() && entity.getContinent().contains(country.getContinent())){
+            }else if(country.getContinent()!=null && !country.getContinent().isEmpty() && entity.getContinent().contains(country.getContinent())){
                 result.add(entity);
             }
         }
